@@ -5,12 +5,16 @@ body {
 }
 nav {
     display: grid;
-    grid-template-columns:repeat (8, 1fr);
 grid-template-areas: 
     "lg lg lg  lg hm pf abt ct" ;
 font-size: 20px;
 margin-left: 100px;
 margin-top:50px;
+
+}
+
+header {
+    height:1vh;
 }
 a:link {
     text-decoration:none;
@@ -112,7 +116,7 @@ justify-content: center;
     gap:30px;
 }
 .pics {
-    width:600px;  
+    max-width:40%;  
 }
 .about {
     display: flex;
