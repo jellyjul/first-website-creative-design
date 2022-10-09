@@ -1,228 +1,378 @@
-*    {margin:0;
-    padding:0;}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Не работает подключение размера шрифта через медиа
+
+@media (max-width: 544px) {
+        h1 {font-size:50px;}
+        h2 {font-size:15px;}
+        h3 {font-size:10px;}
+    }
+@media (min-width: 544px) and (max-width: 800px) {
+        h1 {font-size:80px;}
+        h2 {font-size:40px;}
+        h3 {font-size:20px;}
+    }
+@media (min-width: 800px) and (max-width: 1023px) {
+        h1 {font-size:90px;}
+        h2 {font-size:60px;}
+        h3 {font-size:40px;}
+    }
+*/
 
 body {
     background-color: black;
     font-family: 'Inter', sans-serif;
     color: white;
 }
-nav {
-display: grid;
-grid-template-areas: 
-"lg lg lg  lg hm pf abt ct" ;
-font-size: 20px;
-margin-left: 100px;
-margin-top:50px;
-}
 
+header {
+    height: 10vh;
+}
 
 a:link {
-    text-decoration:none;
+    text-decoration: none;
 }
-a{
-    color:aliceblue;
+
+a {
+    color: aliceblue;
     font-weight: 700;
 }
+/* не получается на ровном расстоянии друг от друга расположить элементы навигац меню*/
+nav {
+    display: grid;
+    grid-template-areas:
+        "lg lg lg  lg hm pf pf abt abt abt ct";
+    font-size: 2.4vh;
+    font-weight: 200;
+    margin-left: 10vw;
+    margin-top: 4vh;
+}
+
 .logo {
-    grid-area:lg;
+    grid-area: lg;
 }
+
 .home {
-    grid-area:hm;
+    grid-area: hm;
 }
+
 .portfolio {
-    grid-area:pf;
-text-align: center;
+    grid-area: pf;
+    text-align: center;
 }
+
 .about {
-    grid-area:abt;
+    grid-area: abt;
 }
+
 .contact {
-    grid-area:ct;
+    grid-area: ct;
 }
 
 .container {
     position: relative;
-    height:800px;
+    margin-bottom: 10%;
 }
-.box1  {
+
+.box1 {
     position: relative;
-    top:80px;
-    left:100px;
-    width:678.9px;
+    width: 60%;
+    margin-left: 10vw;
 }
 
 .rectangle1 {
     position: relative;
-    top:200px;
+    top: 10vh;
     width: 30%;
 }
+
 .rectangle2 {
     position: relative;
-    left:38%;
+    left: 38%;
     width: 30%;
 }
 
 h1 {
-position: relative;
-width: 80%;
-left: 10%;
-bottom: 45%;
-z-index: 1;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 18vw;
+    line-height: 80%;
+    text-align: center;
+}
 
-font-family: 'Playfair Display', serif;
-font-style: normal;
-font-weight: 700;
-font-size: 250px;
-line-height:80%;
-text-align: center;
+.title {
+    position: absolute;
+    z-index: 1;
 }
 
 h2 {
-font-family: 'Playfair Display';
-font-style: normal;
-font-weight: 400;
-font-size: 81.3081px;
-text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 8vh;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 4vh;
+}
+
+h4 {
+    font-size: 1.2vw;
 }
 
 .quote {
-background-color: white;
-position: relative;
-width: 15%;
-height: 4%;
-bottom:40%;
-left:45%;
-font-family: 'Inter';
-font-style: normal;
-font-size: 25px;
-
+    background-color: white;
+    position: relative;
+    width: 15%;
+    margin: auto;
 }
 
 .link2 {
-color: black;
-display: flex;
-justify-content: center;
-}
-.container3 {
-    width:1200px;
-    margin: auto;
-}
-.pictures { 
-    height:3000px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content:flex-start;
-    align-items: center;
-    gap:30px;
-}
-.pics {
-    width:40%;
-    max-width: 100%;
-}
-.about {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8vw;
+    font-weight: 600;
+    padding: 5%;
+    color: black;
     display: flex;
     justify-content: center;
 }
-.ab {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 200;
-    font-size: 35px;
-    margin: 20px;
-    width: 600px;
-}
-.students {
-    width:450px;
-}
-.testimon {
-    text-align:center;
-    width:1000px;
-    margin-left:200px;
+
+.container3 {
     margin: auto;
+    margin-bottom: 10%;
 }
 
-.row_up, .row_down, .row_aside {
-width: 400px;
-height: 300px;
-background: #181818;
-border: 1px red;
+.pictures {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pics {
+    max-width: 450px;
+    width: 100%
+}
+
+.pics2,
+.pic3 {
+    align-self: flex-start;
+}
+
+.pics4 {
+    align-self: baseline;
+    margin-top: -40vh;
+}
+
+.pics5 {
+    align-self: flex-start;
+    margin-top: -20vh;
+}
+
+.pic6 {
+    align-self: flex-end;
+}
+
+.about1 {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+}
+
+.text_about {
+    font-family: 'Inter';
+    font-size:1.5em;
+    margin: 2%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+}
+
+/*настраиваю width 100% но все равно фото не сжимается*/
+.pic_student {
+    width: 100%;
+    max-width: 400px;
+}
+
+.testimonials {
+    margin-bottom: 15%;
+}
+
+.text_testimonials {
+    margin: auto;
+    width: 60%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.flex_people {
+    margin: auto;
+    display: flex;
+    gap: 1%;
+    width: 60%;
+    align-items: center;
+}
+
+.row_up,
+.row_down,
+.row_aside {
+    background: #181818;
+}
+
+.flex_in {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: stretch;
+    align-content: flex-end;
 }
 
 .photo_man {
-    height: 300px;
+    max-width: 200px;
+    width: 100%
 }
 
-.people,.people2 {
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-gap:10px;
-
+.photo_man1 {
+    max-width: 350px;
+    width: 100%
 }
-h3 {
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 40px;
+
+.person1 {
+    display: flex;
+    background-color: #181818;
+}
+
+.person2 {
+    flex-basis: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #181818;
+}
+
+.person3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    background-color: #181818;
 }
 
 .text1 {
+    font-family: 'Inter';
     text-align: justify;
     margin: 10px;
-    font-size: 15px;
+    font-size: 1.5vh;
+    font-weight: 300;
+    width: 70%;
 }
-.container5 {
-    width:700px;
-    height:700px;
+
+.row_aside {
+    display: flex;
+}
+
+.p3 {
+    flex-basis: 60%;
+}
+
+.bt {
+    margin: 5%;
+    text-align: center;
+}
+
+.bt2 {
+    border: 2px solid white;
+    padding: 1.5%;
+    min-width: 19%;
+    width: 19%;
     margin: auto;
 }
+
+.review {
+    font-size: 2vh;
+    ;
+}
+
+.container5 {
+    width: 60%;
+    margin: auto;
+}
+
 .container6 {
     text-align: start;
 }
-.inp1 {    
-font-family: 'Inter';
-    font-style: normal;
+
+.inp1 {
+    font-family: 'Inter';
     font-weight: 400;
-font-size: 30px;
-margin:20px;
+    font-size: 4vh;
+    margin: 20px;
 }
-input[type=text], input[type=email] {
+
+input[type=text],
+input[type=email] {
     background-color: black;
-    color:white;
-    font-size: 20px;;
-    height:30px;
-    width:100px;
+    border: 0px;
+    outline: none;
+    color: white;
+    font-size: 2.5vh;
+    width: 200px;
     margin-bottom: 0px;
-}  
+}
 
 .vector {
-    width:600px;
+    max-width: 800px;
+    width: 100%
 }
+
 textarea {
     background-color: black;
-    width:600px;
-    height:200px;
-    color:white;
-    font-size: 20px;
+    width: 60%;
+    height: 200px;
+    color: white;
+    font-size: 3vh;
     color: #BBBBBB;
+    border: 0px;
+    outline: none;
+    margin-top: 10px;
+    font-family: 'Inter';
 }
 
 input[type=submit] {
-font-family: 'Inter';
-font-style:normal;
-font-weight:600;
-font-size:32px;
-cursor: pointer;
-width:187.84px;
-height:72.14px;
-display:flex;
-justify-content:center;
-align-self: center;
-width:150px;
-background-color: white;
-}
-.but {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 3.5vh;
+    border: none;
+    cursor: pointer;
+    width: 187.84px;
+    height: 72.14px;
     display: flex;
     justify-content: center;
+    align-self: center;
+    width: 150px;
+    background-color: white;
+}
+
+#mess {
+    font-family: 'Inter', sans-serif;
+}
+
+.but {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+
+}
+
+.cont6 {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
 }
