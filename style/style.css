@@ -4,24 +4,143 @@
     box-sizing: border-box;
 }
 
-/*Не работает подключение размера шрифта через медиа
-
-@media (max-width: 544px) {
+/*Не работает подключение размера шрифта через медиа- никак не могу понять почему не работает, значения пока рандомные :(
+@media(max-width: 544px) {
         h1 {font-size:50px;}
         h2 {font-size:15px;}
         h3 {font-size:10px;}
     }
-@media (min-width: 544px) and (max-width: 800px) {
+@media(min-width: 544px) and (max-width: 800px) {
         h1 {font-size:80px;}
         h2 {font-size:40px;}
         h3 {font-size:20px;}
     }
-@media (min-width: 800px) and (max-width: 1023px) {
+@media(min-width: 800px) and (max-width: 1023px) {
         h1 {font-size:90px;}
         h2 {font-size:60px;}
         h3 {font-size:40px;}
     }
 */
+
+@media(min-width: 767px) 
+{
+#menuToggle {
+    display: none;
+} 
+}
+
+@media(max-width: 767px)
+{
+    #menuToggle
+{
+  display: block;
+  position: relative;
+  z-index: 101;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; 
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu
+{
+  position: absolute;
+  width: 350px;
+  margin: -0px 0 0 -50px;
+  padding: 50px;
+  padding-top: 30px;
+  padding-bottom: 100px;
+  background: black;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+  color: #cdcdcd;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+.nav1 {display: none;}
+}
+
+
 
 body {
     background-color: black;
@@ -41,11 +160,11 @@ a {
     color: aliceblue;
     font-weight: 700;
 }
-/* не получается на ровном расстоянии друг от друга расположить элементы навигац меню*/
+
 nav {
     display: grid;
     grid-template-areas:
-        "lg lg lg  lg hm pf pf abt abt abt ct";
+        "lg lg lg  hm pf pf abt abt ct";
     font-size: 2.4vh;
     font-weight: 200;
     margin-left: 10vw;
