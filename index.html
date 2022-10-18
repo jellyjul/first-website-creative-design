@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/globalStyle/globalStyle.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,14 +15,14 @@
   </head>
   <body>
     <header>
-      <nav class="nav1">
-        <a class="logo" href="#">LOGO</a>
-        <a class="home" href="/index.html">HOME</a>
-        <a class="portfolio" href="#portfolio">PORTFOLIO</a>
-        <a class="about" href="#about">ABOUT</a>
-        <a class="contact" href="#contact">CONTACT</a>
-      </nav>
       <nav class="navigation">
+        <a class="navigation__logo" href="#">LOGO</a>
+        <a class="navigation__home" href="/index.html">HOME</a>
+        <a class="navigation__portfolio" href="#portfolio">PORTFOLIO</a>
+        <a class="navigation__about" href="#about">ABOUT</a>
+        <a class="navigation__contact" href="#contact">CONTACT</a>
+      </nav>
+      <nav class="smallnavigation">
         <div id="menuToggle">
           <input type="checkbox" />
 
@@ -41,14 +41,14 @@
     </header>
 
     <main>
-      <div class="container">
-        <div class="box1">
+      <div class="box">
+        <div class="box__text">
           <h4>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </h4>
         </div>
-        <div class="title">
+        <div class="box__title">
           <h1>Creative Design</h1>
         </div>
         <img
@@ -63,14 +63,14 @@
           alt="Rectangle"
         />
 
-        <div class="quote">
+        <div class="box__quote">
           <a class="link2" href="#">Get a Quote </a>
         </div>
       </div>
 
-      <div class="container3">
+      <div class="secondbox">
         <h2 id="portfolio">PORTFOLIO</h2>
-        <div class="pictures">
+        <div class="secondbox__pictures">
           <img class="pics" src="./assets/Rectangle_1.png" alt="picture" />
 
           <img
@@ -98,8 +98,8 @@
       </div>
 
       <h2 id="about">About</h2>
-      <div class="about1">
-        <p class="text_about">
+      <div class="thirdbox">
+        <p class="thirdbox__text">
           We create stunning Lorem ipsum dolor sit amet, consectetur adipiscing
           elit.We create stunning Lorem ipsum dolor sit amet, consectetur
           adipiscing elit.<br />
@@ -108,9 +108,9 @@
           consectetur adipiscing elit.We create stunning Lorem ipsum dolor sit
           amet, consectetur adipiscing elit.
         </p>
-        <div class="students">
+        <div class="thirdbox__students pic">
           <img
-            class="pic_student"
+            class="pic__student"
             src="./assets/Rectangle_7.png"
             alt="students"
           />
@@ -119,26 +119,26 @@
 
       <h2>Testimonials</h2>
       <div class="testimonials">
-        <p class="text_testimonials">
+        <p class="testimonials__text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum
           dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
           amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet,
           consectetur adipiscing elit.
         </p>
 
-        <div class="flex_people">
-          <div class="flex_in">
-            <div class="person1">
-              <div class="img1">
+        <div class="testimonials__people">
+          <div class="card">
+            <div class="card__first-person">
+              <div class="card__img">
                 <img
-                  class="photo_man1"
+                  class="card__man card__man-first"
                   src="./assets/Rectangle_31.png"
                   alt="a man"
                 />
               </div>
-              <div class="row_up">
+              <div class="card__row-up">
                 <h3>“Amazing Team with Lorem Ipsum”</h3>
-                <p class="text1">
+                <p class="card__text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem
                   ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
                   dolor sit amet,
@@ -146,19 +146,19 @@
               </div>
             </div>
 
-            <div class="person3">
-              <div class="row_aside">
+            <div class="card__second-person">
+              <div class="card__row-aside">
                 <div class="p3">
                   <h3>“Big Dreams for lorem ipsum”</h3>
-                  <div class="text1">
+                  <div class="card__text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing
                     elit.Lorem ipsum dolor sit amet, consectetur adipiscing
                     elit. Lorem ipsum dolor sit amet,
                   </div>
                 </div>
-                <div class="p3">
+                <div class="card__photo">
                   <img
-                    class="photo_man photo_man3"
+                    class="card__man"
                     src="/assets/Rectangle_28.png"
                     alt="next man"
                   />
@@ -166,16 +166,16 @@
               </div>
             </div>
           </div>
-          <div class="person2">
-            <div class="p2">
+          <div class="card__third-person">
+            <div class="card__photo">
               <img
-                class="photo_man photo_man2"
+                class="card__man"
                 src="./assets/Rectangle_26.png"
                 alt="a man too"
               />
-              <div class="row_down">
+              <div class="card__row-down">
                 <h3>“Good Dreams for lorem ipsum”</h3>
-                <div class="text1">
+                <div class="card__text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem
                   ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
                   dolor sit amet,
@@ -184,37 +184,51 @@
             </div>
           </div>
         </div>
-        <div class="bt">
-          <p class="bt2"><a class="review" href="#">See All Reviews</a></p>
+        <div class="button">
+          <p class="button__review">
+            <a class="button__text" href="#">See All Reviews</a>
+          </p>
         </div>
       </div>
 
-      <div class="container4">
+      <div class="fifthbox">
         <h2 id="contact">Contacts</h2>
-        <div class="container5">
-          <div class="container6">
-            <div class="inp1">
+        <div class="contacts">
+          <div class="contacts__box">
+            <div class="contacts__input">
               <label for="name">Name</label> <br />
               <input type="text" id="name" placeholder="Jhon Doe" />
-              <div class="vector1">
-                <img class="vector" src="/assets/Vector_3.png" alt="vector" />
+              <div class="contacts__vector">
+                <img
+                  class="contacts__vector"
+                  src="/assets/Vector_3.png"
+                  alt="vector"
+                />
               </div>
             </div>
-            <div class="inp1">
+            <div class="contacts__input">
               <label for="email">Email </label><br />
               <input type="email" id="email" placeholder="jhon@email.com" />
-              <div class="vector1">
-                <img class="vector" src="/assets/Vector_3.png" alt="vector" />
+              <div class="contacts__vector">
+                <img
+                  class="contacts__vector"
+                  src="/assets/Vector_3.png"
+                  alt="vector"
+                />
               </div>
             </div>
-            <div class="inp1">
+            <div class="contacts__input">
               <label for="mess"> Message </label> <br />
               <textarea id="mess">
 Enter your message here...
               </textarea>
-              <img class="vector" src="/assets/Vector_3.png" alt="vector" />
+              <img
+                class="contacts__vector"
+                src="/assets/Vector_3.png"
+                alt="vector"
+              />
             </div>
-            <div class="but">
+            <div class="contacts__submit">
               <input type="submit" value="Send" />
             </div>
           </div>
